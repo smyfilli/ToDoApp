@@ -1,5 +1,3 @@
-//import React, { useState, useEffect } from "react";
-
 import TaskList from "./components/TaskList";
 import TaskFilter from "./components/TaskFilter";
 import "./styles.css";

@@ -6,16 +6,12 @@ import { useState } from "react";
 interface TaskListItemProps {
   task: Task;
   setEditTask: (editTask: Task) => void;
-  // onToggleCompleted: (id: number) => void;
-  // onDeleteTask: (id: number) => void;
 }
 
 const TaskListItem: React.FC<TaskListItemProps> = ({ task, setEditTask }) => {
   const [showDescription, setShowDescription] = useState<boolean>(false);
 
   const dispatch = useDispatch();
-
-  //handleShowDes
 
   const handleToggleCompleted = () => {
     dispatch(toggleComplete(task.id));

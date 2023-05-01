@@ -12,8 +12,6 @@ const TaskFilter = () => {
   const [endDateFilter, setEndDateFilter] = useState<any>();
   const [completedFilter, setCompletedFilter] = useState<any>();
 
-  console.log(completedFilter);
-
   const handleFilterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(
@@ -78,7 +76,6 @@ const TaskFilter = () => {
                   >
                     <option value="">Все</option>
                     <option value="true">Завершена</option>
-                    {/* <option value="false">Активна</option> */}
                   </select>
                 </div>
               </div>

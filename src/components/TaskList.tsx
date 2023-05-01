@@ -3,7 +3,6 @@ import TaskListItem from "./TaskListItem";
 import { Task, AppState } from "../types";
 import Form from "../components/Form";
 import { useSelector } from "react-redux";
-//import { addVisibleTasks, setPage } from "../store/actions";
 
 const TaskList = () => {
   const [showForm, setShowForm] = useState(false);
@@ -11,12 +10,6 @@ const TaskList = () => {
 
   const tasks = useSelector((state: AppState) => state.tasks);
   const filter = useSelector((state: AppState) => state.filter);
-  //let page = useSelector((state: AppState) => state.pagination.page);
-  // const TASKS_PER_PAGE = useSelector(
-  //   (state: AppState) => state.pagination.pageSize
-  // );
-  // const startIndex = (page - 1) * TASKS_PER_PAGE;
-  // const endIndex = startIndex + TASKS_PER_PAGE;
 
   const filteredTasks = useMemo(() => {
     return tasks.filter((task) => {
@@ -42,24 +35,6 @@ const TaskList = () => {
     });
   }, [tasks, filter]);
 
-  // const scrollHandler = (e: any) => {
-  //   if (
-  //     e.target.documentElement.scrollHeight -
-  //       (e.target.documentElement.scrollTop + window.innerHeight) <
-  //     100
-  //   ) {
-  //     dispatch(setPage(page++));
-  //     setFetching(true);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener("scroll", scrollHandler);
-  //   return () => {
-  //     document.removeEventListener("scroll", scrollHandler);
-  //   };
-  // });
-
   const handleEditTask = (task: Task) => {
     setEditTask(task);
     setShowForm(true);
@@ -69,12 +44,6 @@ const TaskList = () => {
     setEditTask(undefined);
     setShowForm(false);
   };
-
-  // const visibleTasks = filteredTasks
-  //   .slice(startIndex, endIndex)
-  //   .map((task) => (
-  //     <TaskListItem key={task.id} task={task} setEditTask={handleEditTask} />
-  //   ));
 
   return (
     <>

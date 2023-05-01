@@ -54,11 +54,7 @@ function reducer(state = initialState, action: AppAction) {
             : task
         )
       };
-    // case "LOAD_TASKS":
-    //   return {
-    //     ...state,
-    //     visibleTasks: [...state.visibleTasks, action.payload]
-    //   };
+
     default:
       return state;
   }

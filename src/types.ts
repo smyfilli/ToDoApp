@@ -37,4 +37,3 @@ export type AppAction =
   | { type: "SET_FILTER"; payload: FilterParams }
   | { type: "SET_PAGE"; payload: number }
   | { type: "TOGGLE_COMPLETED"; payload: number };
-//| { type: "LOAD_TASKS"; payload: Task[] };
